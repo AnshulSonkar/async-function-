@@ -68,24 +68,40 @@
 
 
 // Multiple Await
-function firstTask() {
-    return new Promise((resolve) => {
-        setTimeout(() => resolve("Task 1 Done"), 1000);
-    });
+// function firstTask() {
+//     return new Promise((resolve) => {
+//         setTimeout(() => resolve("Task 1 Done"), 1000);
+//     });
+// }
+
+// function secondTask() {
+//     return new Promise((resolve) => {
+//         setTimeout(() => resolve("Task 2 Done"), 1000);
+//     });
+// }
+
+// async function runTasks() {
+//     let a = await firstTask();
+//     console.log(a);
+
+//     let b = await secondTask();
+//     console.log(b);
+// }
+
+// runTasks();
+
+
+// Error Handling
+async function getData() {
+    try {
+        let res = await fetch("https://dummyjson.com/products");
+
+        let data = await res.json();
+
+        console.log(data);
+    } catch (error) {
+        console.log("Error:", error);
+    }
 }
 
-function secondTask() {
-    return new Promise((resolve) => {
-        setTimeout(() => resolve("Task 2 Done"), 1000);
-    });
-}
-
-async function runTasks() {
-    let a = await firstTask();
-    console.log(a);
-
-    let b = await secondTask();
-    console.log(b);
-}
-
-runTasks();
+getData();
