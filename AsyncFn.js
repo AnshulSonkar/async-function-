@@ -92,16 +92,42 @@
 
 
 // Error Handling
-async function getData() {
-    try {
-        let res = await fetch("https://dummyjson.com/products");
+// async function getData() {
+//     try {
+//         let res = await fetch("https://dummyjson.com/products");
 
-        let data = await res.json();
+//         let data = await res.json();
 
-        console.log(data);
-    } catch (error) {
-        console.log("Error:", error);
-    }
-}
+//         console.log(data);
+//     } catch (error) {
+//         console.log("Error:", error);
+//     }
+// }
 
-getData();
+// getData(); 
+
+
+// Use Effect
+// import { useEffect } from "react";
+
+// function App() {
+//     useEffect(() => {
+
+//         async function fetchProducts() {
+//             let res = await fetch(
+//                 "https://dummyjson.com/products"
+//             );
+
+//             let data = await res.json();
+
+//             console.log(data.products);
+//         }
+
+//         fetchProducts();
+
+//     }, []);
+
+//     return <h1>Hello</h1>;
+// }
+
+// export default App;
