@@ -58,10 +58,34 @@
 
 
 // Async Arrow function 
-const getUser = async () => {
-    return "Anshul";
-};
+// const getUser = async () => {
+//     return "Anshul";
+// };
 
-getUser().then((data) => {
-    console.log(data);
-});
+// getUser().then((data) => {
+//     console.log(data);
+// }); 
+
+
+// Multiple Await
+function firstTask() {
+    return new Promise((resolve) => {
+        setTimeout(() => resolve("Task 1 Done"), 1000);
+    });
+}
+
+function secondTask() {
+    return new Promise((resolve) => {
+        setTimeout(() => resolve("Task 2 Done"), 1000);
+    });
+}
+
+async function runTasks() {
+    let a = await firstTask();
+    console.log(a);
+
+    let b = await secondTask();
+    console.log(b);
+}
+
+runTasks();
