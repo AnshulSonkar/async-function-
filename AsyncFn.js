@@ -38,12 +38,20 @@
 
 
 // Fetch API
-async function getProducts() {
-    let res = await fetch("https://dummyjson.com/products");
+// async function getProducts() {
+//     let res = await fetch("https://dummyjson.com/products");
 
-    let data = await res.json();
+//     let data = await res.json();
 
-    console.log(data.products);
-}
+//     console.log(data.products);
+// }
 
-getProducts();
+// getProducts();
+
+
+// Without Async/Await
+fetch("https://dummyjson.com/products")
+    .then((res) => res.json())
+    .then((data) => {
+        console.log(data.products);
+    });
