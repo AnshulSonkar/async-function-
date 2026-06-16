@@ -8,10 +8,30 @@
 
 
 // Example 1
-async function greet() {
-    return "Hello Anshul";
+// async function greet() {
+//     return "Hello Anshul";
+// }
+
+// greet().then((data) => {
+//     console.log(data);
+// }); 
+
+
+// USing Await 
+function getData() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve("Data Received");
+        }, 2000);
+    });
 }
 
-greet().then((data) => {
-    console.log(data);
-});
+async function fetchData() {
+    console.log("Loading...");
+
+    let result = await getData();
+
+    console.log(result);
+}
+
+fetchData();
