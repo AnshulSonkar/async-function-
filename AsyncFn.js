@@ -50,8 +50,18 @@
 
 
 // Without Async/Await
-fetch("https://dummyjson.com/products")
-    .then((res) => res.json())
-    .then((data) => {
-        console.log(data.products);
-    });
+// fetch("https://dummyjson.com/products")
+//     .then((res) => res.json())
+//     .then((data) => {
+//         console.log(data.products);
+//     });
+
+
+// Async Arrow function 
+const getUser = async () => {
+    return "Anshul";
+};
+
+getUser().then((data) => {
+    console.log(data);
+});
